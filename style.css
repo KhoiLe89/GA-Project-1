@@ -1,8 +1,8 @@
 body{
-
+  background-image: url(http://braccousa.com/wp-content/uploads/2013/07/Dark-wooden-website-background.jpg);
 }
 .mainBoard{
-  border: 1px solid red;
+
   height: 500px;
   width: 500px;
   margin: auto;
@@ -11,12 +11,12 @@ body{
 }
 
 .red, .blue, .yellow, .green{
-  border: 1px solid red;
+
   height: 50%;
   width: 50%;
   margin: 0;
   padding: 0;
-
+border-radius: 50%/50%;
 }
 .red{
 
@@ -31,7 +31,7 @@ float: right;
 .green{
 
   background:#BEDE15;
-
+float: right;
 }
 .yellow{
 
@@ -39,5 +39,5 @@ float: right;
 
 }
 .lit{
-  background-color: pink;
+  opacity: .5;
 }

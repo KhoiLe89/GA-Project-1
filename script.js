@@ -15,26 +15,65 @@ var red = $(".red") //make all these to an object for practice//
 var green = $(".green")
 var yellow = $(".yellow")
 var blue = $(".blue")
+var playButton = $("#playButton")
 
 function newRound() {
-  var sequence = [1, 2, 1]
-  animate(sequence)
+  var sequence = [1, 2, 1, 3, 4, 5, 1, 3, 4]
+  animate(sequence);
+  var click = [];
+  $("button").click(function(){
+    click.push(parseInt($(this).val()))
+    console.log('click:', click);
+    console.log('sequence:', sequence);
+    var numCorrect = 0
+    for (let k = 0; k < click.length; k++) {
+        if (click[k] === sequence[k]) {
+           numCorrect++
+           if(numCorrect === sequence.length) {
+             alert("Game over, you win!")
+           }
+        } else {
+          alert("Game over you lose");
+        }
+    }
+  });
+
+// function checkIfIsSequence(click, sequence) {
+//
+// }
+
+
+
+// compare(sequence, click)
+
 }
+
 function animate(sequence){
-  for (var i=0; i<sequence.length; i++) {
-    var interval = setInterval(function(){
+  for (let i=0; i<sequence.length; i++) {
+
+    var interval = setTimeout(function(){
       lightUp(sequence[i]);
-    }, 600);
-  }
-  if (i >= sequence.length){
-    clearInterval(interval);}
-  }
+      console.log(sequence[i])
+
+    }, 600 + (i*1000));
+
+  }}
+
 
 //the tile argument here is actually sequence[i].
 
 function lightUp(tile){
-  var $tile = $("#1").addClass("lit");
+  var $tile = $("[data-tile='"+tile+"']").addClass("lit");
   window.setTimeout(function(){
-    $tile.removeClass("lit")}, 300);
+    $tile.removeClass("lit")}, 1000);
   }
-  red.on("click", lightUp)
+  playButton.on("click", newRound)
+// $("button").click(function(){
+//   var userClick = $("button").val();
+//   var userClickInput = userClick.value
+//   console.log(userClickInput);
+// });
+// var click = [];
+// $("button").click(function(){
+//   click.push($(this).val());
+// });
