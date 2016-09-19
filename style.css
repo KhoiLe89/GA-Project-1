@@ -1,0 +1,43 @@
+body{
+
+}
+.mainBoard{
+  border: 1px solid red;
+  height: 500px;
+  width: 500px;
+  margin: auto;
+  box-sizing: border-box;
+
+}
+
+.red, .blue, .yellow, .green{
+  border: 1px solid red;
+  height: 50%;
+  width: 50%;
+  margin: 0;
+  padding: 0;
+
+}
+.red{
+
+background: #FF5643;
+float: right;
+}
+.blue {
+
+  background:dodgerblue;
+  float: right;
+}
+.green{
+
+  background:#BEDE15;
+
+}
+.yellow{
+
+  background: #FEEF33;
+
+}
+.lit{
+  background-color: pink;
+}
