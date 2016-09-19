@@ -1,43 +1,89 @@
 body{
   background-image: url(http://braccousa.com/wp-content/uploads/2013/07/Dark-wooden-website-background.jpg);
 }
-.mainBoard{
-
-  height: 500px;
-  width: 500px;
-  margin: auto;
-  box-sizing: border-box;
+header{
 
 }
+.mainBoard{
+  position: relative;
+  width: 440px;
+  height: 440px;
+  margin: auto;
+  margin-top: 50px;
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: grey;
+}
+.fourButton{
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  margin: 20px;
+}
 
-.red, .blue, .yellow, .green{
+/*#red, #blue, #yellow, #green{
 
   height: 50%;
   width: 50%;
   margin: 0;
   padding: 0;
 border-radius: 50%/50%;
-}
-.red{
-
+}*/
+#red{
+top: 0;
+left: 0;
 background: #FF5643;
-float: right;
+border-radius: 100% 0 0 0;
 }
-.blue {
-
-  background:dodgerblue;
-  float: right;
+#blue {
+top: 0;
+right: 0;
+background:dodgerblue;
+border-radius: 0 100% 0 0;
 }
-.green{
-
-  background:#BEDE15;
-float: right;
+#green{
+background:#BEDE15;
+bottom: 0;
+left: 0;
+border-radius: 0 0 0 100%;
 }
-.yellow{
+#yellow{
 
   background: #FEEF33;
+bottom: 0;
+right: 0;
+border-radius: 0 0 100% 0;
+}
 
+#center{
+  position: absolute;
+  background-color: white;
+  height: 200px;
+  width: 200px;
+  border: 20px solid grey;
+  border-radius: 50%;
+  top: 110px;
+  left: 100px;
+}
+#textTitle{
+  text-align: center;
+  font-size: 40px;
+  margin-top: 10px;
+}
+#playButton{
+  border-radius: 50%;
+  background-color: red;
+  text-align: center;
+  margin-top: 30px;
+  margin-left: 80px;
 }
 .lit{
+  opacity: .5;
+}
+.clearfix {
+	width: 100%;
+	clear: both;
+}
+.bodyChange{
   opacity: .5;
 }

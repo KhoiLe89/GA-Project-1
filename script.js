@@ -11,14 +11,14 @@
 // end of the array.
 // the light up function, adds a class of "lit" that lowers the opacity of the color.
 
-var red = $(".red") //make all these to an object for practice//
-var green = $(".green")
-var yellow = $(".yellow")
-var blue = $(".blue")
+var red = $("#red") //make all these to an object for practice//
+var green = $("#green")
+var yellow = $("#yellow")
+var blue = $("#blue")
 var playButton = $("#playButton")
 
 function newRound() {
-  var sequence = [1, 2, 1, 3, 4, 5, 1, 3, 4]
+  var sequence = [1, 2, 1]
   animate(sequence);
   var click = [];
   $("button").click(function(){
@@ -31,6 +31,8 @@ function newRound() {
            numCorrect++
            if(numCorrect === sequence.length) {
              alert("Game over, you win!")
+
+            // setInterval($("body").toggleClass("bodyChange"), 300);
            }
         } else {
           alert("Game over you lose");
