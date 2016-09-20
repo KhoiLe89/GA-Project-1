@@ -11,14 +11,19 @@
 // end of the array.
 // the light up function, adds a class of "lit" that lowers the opacity of the color.
 
+
+// add a score keeper function
+//add a timer
+//add a stop button
 var red = $("#red") //make all these to an object for practice//
 var green = $("#green")
 var yellow = $("#yellow")
 var blue = $("#blue")
 var playButton = $("#playButton")
-
+var resetButton = $("#resetButton")
+var sequence = [1, 2, 1, 4]
 function newRound() {
-  var sequence = [1, 2, 1]
+  shuffle(sequence)
   animate(sequence);
   var click = [];
   $("button").click(function(){
@@ -40,14 +45,6 @@ function newRound() {
     }
   });
 
-// function checkIfIsSequence(click, sequence) {
-//
-// }
-
-
-
-// compare(sequence, click)
-
 }
 
 function animate(sequence){
@@ -62,7 +59,7 @@ function animate(sequence){
   }}
 
 
-//the tile argument here is actually sequence[i].
+//this lights up the buttons but adding/removing classes
 
 function lightUp(tile){
   var $tile = $("[data-tile='"+tile+"']").addClass("lit");
@@ -70,12 +67,24 @@ function lightUp(tile){
     $tile.removeClass("lit")}, 1000);
   }
   playButton.on("click", newRound)
-// $("button").click(function(){
-//   var userClick = $("button").val();
-//   var userClickInput = userClick.value
-//   console.log(userClickInput);
-// });
-// var click = [];
-// $("button").click(function(){
-//   click.push($(this).val());
-// });
+
+// Score Keeper
+    $(".fourButton").click(function(){
+      $(".scoreBox").html(function(i, val){
+        return +val+1
+      })
+    })
+resetButton.click(function(){
+  location.reload();
+})
+function shuffle(sequence){
+  var currentPass = sequence.length;
+  var index, temp;
+  while (currentPass > 0){
+    index = Math.floor(Math.random() * currentPass)
+    currentPass--;
+    temp =  sequence[currentPass];
+    sequence[currentPass] = sequence[index];
+    sequence[index] = temp;
+  }
+}
