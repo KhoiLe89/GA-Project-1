@@ -27,6 +27,10 @@ top: 0;
 left: 0;
 background: #FF5643;
 border-radius: 100% 0 0 0;
+
+}
+#red, #blue, #green, #yellow:focus{
+  outline: none;
 }
 #blue {
 top: 0;
@@ -92,4 +96,27 @@ border-radius: 0 0 100% 0;
   margin-left: 80px;
   margin-top: 30px;
   padding: 0;
+}
+/*.startPage{
+  background: black;
+
+}*/
+/*body {
+  animation-duration: 5s;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #001F3F;
+  }
+  100% {
+    background-color: #FF4136;
+  }
+}*/
+
+.lose{
+  background-color: red;
+}
+.win{
+  background-color: green;
 }

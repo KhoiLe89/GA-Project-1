@@ -12,20 +12,20 @@
 // the light up function, adds a class of "lit" that lowers the opacity of the color.
 
 
-// add a score keeper function
-//add a timer
-//add a stop button
+
 var red = $("#red") //make all these to an object for practice//
 var green = $("#green")
 var yellow = $("#yellow")
 var blue = $("#blue")
 var playButton = $("#playButton")
 var resetButton = $("#resetButton")
-var sequence = [1, 2, 1, 4]
+var sequence = [1]
+var click = [];
+// var a1 = Math.floor((Math.random() * 4) + 1);
 function newRound() {
   shuffle(sequence)
   animate(sequence);
-  var click = [];
+
   $("button").click(function(){
     click.push(parseInt($(this).val()))
     console.log('click:', click);
@@ -35,12 +35,21 @@ function newRound() {
         if (click[k] === sequence[k]) {
            numCorrect++
            if(numCorrect === sequence.length) {
-             alert("Game over, you win!")
-
+            //  newRound();
+            console.log(sequence)
+             sequence = randomNumber(sequence)
+             console.log(sequence)
+             clearClick();
+            //  clearClick();
+            //  win();
+            //  youWin();
+// addNewRound();
+//click needs to reset
             // setInterval($("body").toggleClass("bodyChange"), 300);
            }
         } else {
-          alert("Game over you lose");
+          lose();
+          gameOver();
         }
     }
   });
@@ -67,16 +76,17 @@ function lightUp(tile){
     $tile.removeClass("lit")}, 1000);
   }
   playButton.on("click", newRound)
-
+  resetButton.click(function(){
+    location.reload();
+  })
+  // red.on("click", redSound)
 // Score Keeper
     $(".fourButton").click(function(){
       $(".scoreBox").html(function(i, val){
         return +val+1
       })
     })
-resetButton.click(function(){
-  location.reload();
-})
+
 function shuffle(sequence){
   var currentPass = sequence.length;
   var index, temp;
@@ -87,4 +97,85 @@ function shuffle(sequence){
     sequence[currentPass] = sequence[index];
     sequence[index] = temp;
   }
+}
+
+// function redSound(){
+//   var x = $("#sound1");
+//   x.play();
+// }
+// use update method to update source
+
+function redSound(){
+var audio = new Audio('audio/button1.mp3');
+audio.play()}
+
+
+function blueSound(){
+  var audio = new Audio('audio/button2.mp3');
+  audio.play()}
+
+function yellowSound(){
+  var audio = new Audio('audio/button3.mp3');
+  audio.play()}
+
+function greenSound(){
+  var audio = new Audio('audio/button4.mp3');
+  audio.play()}
+function gameOver(){
+  var audio = new Audio('audio/gameOver.wav');
+  audio.play()}
+function youWin(){
+  var audio = new Audio('audio/youWin.mp3');
+  audio.play()}
+
+red.on("click", redSound)
+blue.on("click", blueSound)
+yellow.on("click", yellowSound)
+green.on("click", greenSound)
+
+//make the sounds happen on the lightup, not just the click
+// function increment(){
+//   for (var i=1; i<5; i++){
+//
+//   }
+// }
+
+// $(document).ready(function() {
+// $('body').click(
+//     function() {
+//         $(this).stop().animate({backgroundColor:'#4E1402'}, 300);
+//         }, function () {
+//         $(this).stop().animate({backgroundColor:'#943D20'}, 100);
+//     });
+// });
+
+  function lose(){
+
+  var mainBoard = $(".mainBoard").addClass("lose");
+  window.setInterval(function(){
+    mainBoard.toggleClass("lose")}, 200);
+  }
+
+  function win(){
+
+  var mainBoard = $(".mainBoard").addClass("win");
+  window.setInterval(function(){
+    mainBoard.toggleClass("win")}, 200);
+  }
+
+function randomNumber(array){
+
+  var a1 = Math.floor((Math.random() * 4) + 1);
+
+  array.push(a1)
+  lightUp(a1)
+  return array
+
+
+}
+function clearClick(){
+  click=[]
+}
+function addNewRound(){
+(sequence + randomNumber(a1))
 }
