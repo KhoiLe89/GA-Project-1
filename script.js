@@ -1,19 +1,5 @@
-// Create a sequence Array where the assigned values are
-// the colors.
-//When we need to animate, we send the array to the
-//animate function
-//We use the setInterval method to control the
-//brightening of the colors.
-//Step by step: Create a function that is a newround,
-//then inside that function, we have an array of the sequence.
-//Also in that function, is another function that is a for loop.
-//that for loop causes the lightup and clear interval when it reachesthe
-// end of the array.
-// the light up function, adds a class of "lit" that lowers the opacity of the color.
 
-
-
-var red = $("#red") //make all these to an object for practice//
+var red = $("#red")
 var green = $("#green")
 var yellow = $("#yellow")
 var blue = $("#blue")
@@ -21,7 +7,7 @@ var playButton = $("#playButton")
 var resetButton = $("#resetButton")
 var sequence = [1]
 var click = [];
-// var a1 = Math.floor((Math.random() * 4) + 1);
+
 function newRound() {
   shuffle(sequence)
   animate(sequence);
@@ -35,12 +21,12 @@ function newRound() {
         if (click[k] === sequence[k]) {
            numCorrect++
            if(numCorrect === sequence.length) {
-            //  newRound();
+
             console.log(sequence)
              sequence = randomNumber(sequence)
              console.log(sequence)
              clearClick();
-            //  clearClick();
+
             //  win();
             //  youWin();
 // addNewRound();
@@ -99,11 +85,7 @@ function shuffle(sequence){
   }
 }
 
-// function redSound(){
-//   var x = $("#sound1");
-//   x.play();
-// }
-// use update method to update source
+
 
 function redSound(){
 var audio = new Audio('audio/button1.mp3');
@@ -133,24 +115,8 @@ blue.on("click", blueSound)
 yellow.on("click", yellowSound)
 green.on("click", greenSound)
 
-//make the sounds happen on the lightup, not just the click
-// function increment(){
-//   for (var i=1; i<5; i++){
-//
-//   }
-// }
 
-// $(document).ready(function() {
-// $('body').click(
-//     function() {
-//         $(this).stop().animate({backgroundColor:'#4E1402'}, 300);
-//         }, function () {
-//         $(this).stop().animate({backgroundColor:'#943D20'}, 100);
-//     });
-// });
-
-  function lose(){
-
+function lose(){
   var mainBoard = $(".mainBoard").addClass("lose");
   window.setInterval(function(){
     mainBoard.toggleClass("lose")}, 200);
