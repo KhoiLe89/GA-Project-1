@@ -1,10 +1,10 @@
-body{
+/* Loved the design and layout! Ran code through Atom's beautify package to fix indentation */
+
+body {
   background-image: url(http://braccousa.com/wp-content/uploads/2013/07/Dark-wooden-website-background.jpg);
 }
-header{
 
-}
-.mainBoard{
+.mainBoard {
   position: relative;
   width: 440px;
   height: 440px;
@@ -13,46 +13,48 @@ header{
   border: 1px solid black;
   border-radius: 50%;
   background-color: grey;
-
 }
-.fourButton{
+
+.fourButton {
   position: absolute;
   width: 190px;
   height: 190px;
   margin: 20px;
 }
 
-#red{
-top: 0;
-left: 0;
-background: #FF5643;
-border-radius: 100% 0 0 0;
-
+#red {
+  top: 0;
+  left: 0;
+  background: #FF5643;
+  border-radius: 100% 0 0 0;
 }
-#red, #blue, #green, #yellow:focus{
+
+#red, #blue, #green, #yellow:focus {
   outline: none;
 }
+
 #blue {
-top: 0;
-right: 0;
-background:dodgerblue;
-border-radius: 0 100% 0 0;
+  top: 0;
+  right: 0;
+  background: dodgerblue;
+  border-radius: 0 100% 0 0;
 }
-#green{
-background:#BEDE15;
-bottom: 0;
-left: 0;
-border-radius: 0 0 0 100%;
-}
-#yellow{
 
+#green {
+  background: #BEDE15;
+  bottom: 0;
+  left: 0;
+  border-radius: 0 0 0 100%;
+}
+
+#yellow {
   background: #FEEF33;
-bottom: 0;
-right: 0;
-border-radius: 0 0 100% 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 0 0 100% 0;
 }
 
-#center{
+#center {
   position: absolute;
   background-color: white;
   height: 200px;
@@ -61,44 +63,48 @@ border-radius: 0 0 100% 0;
   border-radius: 50%;
   top: 110px;
   left: 100px;
-
 }
-#textTitle{
+
+#textTitle {
   text-align: center;
   font-size: 40px;
   margin-top: 10px;
 }
-#playButton, #resetButton{
+
+#playButton, #resetButton {
   border-radius: 50%;
   background-color: orange;
   text-align: center;
   padding: 0;
 }
-.lit{
+
+.lit {
   opacity: .5;
 }
 
-.bodyChange{
+.bodyChange {
   opacity: .5;
 }
-.scoreBox{
+
+.scoreBox {
   height: 30px;
   width: 50px;
   background: orange;
   border-radius: 25%;
-  text-align:center;
+  text-align: center;
   font-size: 25px;
-
 }
-#playButton, .scoreBox{
+
+#playButton, .scoreBox {
   margin-left: 80px;
   margin-top: 30px;
   padding: 0;
 }
 
-.lose{
+.lose {
   background-color: red;
 }
-.win{
+
+.win {
   background-color: green;
 }
