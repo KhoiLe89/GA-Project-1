@@ -1,4 +1,5 @@
 
+// NHO: is this file being used? If not, might want to delete it...
 function newRound() {
   var sequence = [1, 2, 2]
   animate(sequence)
